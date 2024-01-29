@@ -1,7 +1,10 @@
 import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../widgets/image_input.dart';
+import '../providers/great_places_provider.dart';
 
 class AddPlacesScreen extends StatefulWidget {
   const AddPlacesScreen({super.key});
@@ -23,6 +26,12 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
     if (_titleController.text.isEmpty || _pickedImage == null) {
       return;
     }
+    // TODO: implement saving the place to database
+    Provider.of<GreatPlacesProvider>(context, listen: false).addPlace(
+      _titleController.text,
+      _pickedImage!,
+    );
+    Navigator.of(context).pop();
   }
 
   @override
