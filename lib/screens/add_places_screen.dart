@@ -11,6 +11,7 @@ class AddPlacesScreen extends StatefulWidget {
 }
 
 class _AddPlacesScreenState extends State<AddPlacesScreen> {
+  final _titleController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,16 +25,17 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Expanded(
+          Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   children: [
                     TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
+                      decoration: const InputDecoration(labelText: 'Title'),
+                      controller: _titleController,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     ImageInput(),
