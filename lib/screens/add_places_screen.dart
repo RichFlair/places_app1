@@ -77,7 +77,7 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
               elevation: MaterialStatePropertyAll(0),
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
-            onPressed: () {},
+            onPressed: _savePlace,
             icon: const Icon(Icons.add),
             label: const Text('Add Place'),
           ),
