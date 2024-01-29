@@ -19,6 +19,12 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
     _pickedImage = pickedImage;
   }
 
+  void _savePlace() {
+    if (_titleController.text.isEmpty || _pickedImage == null) {
+      return;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
