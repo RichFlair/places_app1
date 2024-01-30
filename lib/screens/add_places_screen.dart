@@ -23,10 +23,10 @@ class _AddPlacesScreenState extends State<AddPlacesScreen> {
   }
 
   void _savePlace() {
+    // handling error if picture is not taken
     if (_titleController.text.isEmpty || _pickedImage == null) {
       return;
     }
-    // TODO: implement saving the place to database
     Provider.of<GreatPlacesProvider>(context, listen: false).addPlace(
       _titleController.text,
       _pickedImage!,
