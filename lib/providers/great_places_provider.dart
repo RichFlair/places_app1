@@ -30,4 +30,20 @@ class GreatPlacesProvider with ChangeNotifier {
       },
     );
   }
+
+  Future<void> fetchAndGetData() async {
+    var dataBaseItems = await DatabaseHelper.getData('places');
+    _items = dataBaseItems
+        .map(
+          (e) => Place(
+            id: e['id'],
+            title: e['title'],
+            location: null,
+            image: File(
+              e['image'],
+            ),
+          ),
+        )
+        .toList();
+  }
 }
