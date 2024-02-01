@@ -25,8 +25,7 @@ class DatabaseHelper {
     );
   }
 
-  static Future<List<Map<String, dynamic>>> fectchAndStoreData(
-      String table) async {
+  static Future<List<Map<String, dynamic>>> getData(String table) async {
     final db = await DatabaseHelper.database();
     return db.query(table);
   }
