@@ -24,4 +24,10 @@ class DatabaseHelper {
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
+
+  static Future<List<Map<String, dynamic>>> fectchAndStoreData(
+      String table) async {
+    final db = await DatabaseHelper.database();
+    return db.query(table);
+  }
 }
