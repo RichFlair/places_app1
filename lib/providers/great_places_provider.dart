@@ -32,7 +32,7 @@ class GreatPlacesProvider with ChangeNotifier {
   }
 
   Future<void> fetchAndGetData() async {
-    var dataBaseItems = await DatabaseHelper.getData('places');
+    final dataBaseItems = await DatabaseHelper.getData('places');
     _items = dataBaseItems
         .map(
           (e) => Place(
@@ -40,7 +40,7 @@ class GreatPlacesProvider with ChangeNotifier {
             title: e['title'],
             location: null,
             image: File(
-              e['image'].path,
+              e['image'],
             ),
           ),
         )
