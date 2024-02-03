@@ -45,5 +45,6 @@ class GreatPlacesProvider with ChangeNotifier {
           ),
         )
         .toList();
+    notifyListeners();
   }
 }
