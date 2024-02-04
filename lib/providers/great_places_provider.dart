@@ -22,7 +22,7 @@ class GreatPlacesProvider with ChangeNotifier {
     _items.add(newPlace);
     notifyListeners();
     DatabaseHelper.insert(
-      'places',
+      'user_places',
       {
         'id': newPlace.id,
         'title': newPlace.title,
@@ -32,7 +32,7 @@ class GreatPlacesProvider with ChangeNotifier {
   }
 
   Future<void> fetchAndGetData() async {
-    final dataBaseItems = await DatabaseHelper.getData('places');
+    final dataBaseItems = await DatabaseHelper.getData('user_places');
     _items = dataBaseItems
         .map(
           (e) => Place(
