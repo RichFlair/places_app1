@@ -8,8 +8,19 @@ class LocationInput extends StatefulWidget {
 }
 
 class _LocationInputState extends State<LocationInput> {
+  String? _previewImageUrl;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        Container(
+          height: 170,
+          width: double.infinity,
+          child: _previewImageUrl == null
+              ? const Text('No location chosen')
+              : Image.network(_previewImageUrl!),
+        ),
+      ],
+    );
   }
 }
