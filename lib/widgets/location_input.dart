@@ -14,6 +14,7 @@ class _LocationInputState extends State<LocationInput> {
     return Column(
       children: [
         Container(
+          alignment: Alignment.center,
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.grey,
@@ -22,13 +23,20 @@ class _LocationInputState extends State<LocationInput> {
           height: 170,
           width: double.infinity,
           child: _previewImageUrl == null
-              ? const Text('No location chosen')
-              : Image.network(_previewImageUrl!),
+              ? const Text(
+                  'No location chosen',
+                  textAlign: TextAlign.center,
+                )
+              : Image.network(
+                  _previewImageUrl!,
+                  fit: BoxFit.cover,
+                ),
         ),
         const SizedBox(
           height: 10,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton.icon(
               onPressed: () {},
